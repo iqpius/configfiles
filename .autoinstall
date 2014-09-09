@@ -5,6 +5,7 @@ wget http://ethanschoonover.com/solarized/files/solarized.zip
 
 # Descarga de mi propio vimrc, doy por sentado que la maquina ya ha creado un repositorio con mi 
 # repo de ficheros de configuracion
+git config --global core.editor "vim"
 git config --global user.name "Jose" 
 git config --global user.email jose@josegl.com
 git clone https://github.com/iqpius/configfiles.git
