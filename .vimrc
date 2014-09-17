@@ -43,8 +43,8 @@ filetype plugin indent on    " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""				General config								 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"syntax on
-set t_Co=256
+
+set t_Co=256	    " Ponemos que el modo de color sea 256
 set number	    " Show line numbers
 set linebreak	    " Break lines at word (requires Wrap lines)
 set showbreak=+++   " Wrap-broken line prefix
@@ -61,6 +61,16 @@ set shiftwidth=4    " Number of auto-indent spaces
 set smartindent	    " Enable smart-indent
 set smarttab	    " Enable smart-tabs
 set softtabstop=4   " Number of spaces per Tab
+
+if has("multi_byte")
+    if &termencoding == ""
+	let &termencoding = &encoding
+    endif
+    set encoding=utf-8
+    setglobal fileencoding=utf-8
+    "setglobal bomb
+    set fileencodings=ucs-bom,utf-8,latin1
+endif
  
 "colors solarized   " Seteado en la terminal de osx
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -75,4 +85,8 @@ set backspace=indent,eol,start	" Backspace behaviour
 ""				Mapping de teclas							 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 imap kj <Esc>
-
+" Smart way to move between windows
+ map <C-j> <C-W>j
+ map <C-k> <C-W>k
+ map <C-h> <C-W>h
+ map <C-l> <C-W>l

@@ -3,13 +3,14 @@
 #Descarga del tema de color solarized
 wget http://ethanschoonover.com/solarized/files/solarized.zip
 
-# Descarga de mi propio vimrc, doy por sentado que la maquina ya ha creado un repositorio con mi 
-# repo de ficheros de configuracion
+# Configuracion de git
 git config --global core.editor "vim"
-git config --global user.name "Jose" 
+git config --global user.name "Jose GL" 
 git config --global user.email jose@josegl.com
-git clone https://github.com/iqpius/configfiles.git
-cp configfiles/.vimrc .vimrc 
-cp configfiles/.tmux.conf .tmux.conf
+
+
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+cp .vimrc ~/.vimrc 
+cp .tmux.conf ~/.tmux.conf
 
 
