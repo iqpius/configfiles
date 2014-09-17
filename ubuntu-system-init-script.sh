@@ -1,10 +1,10 @@
 #!/bin/bash
-
+CURRENT_USER=$(who am I | awk '{print $1}')
 # Instalacion de herramientas basicas
 sudo apt-get install git zsh vim 
 
 # Cambio de shell para el usuario actual 
-sudo usermod -s /bin/zsh 
+sudo usermod -s /bin/zsh $CURRENT_USER
 
 # clonamos el repo para tener acceso al script que levanta el entorno
 git clone https://github.com/iqpius/configfiles.git
