@@ -70,7 +70,39 @@ set shiftwidth=4    " Number of auto-indent spaces
 set smartindent	    " Enable smart-indent
 set smarttab	    " Enable smart-tabs
 set softtabstop=4   " Number of spaces per Tab
+set fileformats=unix,dos,mac
+set list
+set listchars=tab:▸\ ,trail:.,extends:#,eol:¬
+"" Charset options: always force to UTF-8 {{{
+set fileencoding=utf-8
+set termencoding=utf-8
+set encoding=utf-8
+set nocp incsearch "incremental search show pattern match as you type
+set hlsearch " highlight search results
+set background=light
 
+set timeoutlen=210
+set autoindent
+
+" Tabs
+set smarttab
+set expandtab
+" size of a hard tabstop
+set tabstop=4
+" size of an "indent"
+set shiftwidth=4
+" a combination of spaces and tabs are used to simulate tab stops at a width
+" other than the (hard)tabstop
+ set softtabstop=4
+
+" Visual
+set showmatch  " Show matching brackets.
+set mat=5  " Bracket blinking.
+set novisualbell  " No blinking .
+set noerrorbells  " No noise.
+set laststatus=2  " Always show status line.
+
+" colorscheme solarized
 if has("multi_byte")
     if &termencoding == ""
 	let &termencoding = &encoding
