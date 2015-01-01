@@ -26,6 +26,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Avoid a name conflict with L9
 "Plugin 'user/L9', {'name': 'newL9'}"
 Bundle 'scrooloose/nerdtree.git'
+Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'tpope/vim-surround'
 Plugin 'kien/ctrlp.vim'
 Plugin 'editorconfig/editorconfig-vim'
@@ -71,15 +72,14 @@ set smartindent	    " Enable smart-indent
 set smarttab	    " Enable smart-tabs
 set softtabstop=4   " Number of spaces per Tab
 set fileformats=unix,dos,mac
-set list
-set listchars=tab:▸\ ,trail:.,extends:#,eol:¬
+"set list
+set listchars=trail:.,extends:#,eol:¬
 "" Charset options: always force to UTF-8 {{{
 set fileencoding=utf-8
 set termencoding=utf-8
 set encoding=utf-8
 set nocp incsearch "incremental search show pattern match as you type
 set hlsearch " highlight search results
-set background=light
 
 set timeoutlen=210
 set autoindent
@@ -102,7 +102,9 @@ set novisualbell  " No blinking .
 set noerrorbells  " No noise.
 set laststatus=2  " Always show status line.
 
-" colorscheme solarized
+syntax  enable
+set background=dark
+colorscheme solarized
 if has("multi_byte")
     if &termencoding == ""
 	let &termencoding = &encoding
@@ -113,7 +115,6 @@ if has("multi_byte")
     set fileencodings=ucs-bom,utf-8,latin1
 endif
  
-"colors solarized   " Seteado en la terminal de osx
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 ""				Advanced config								 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
