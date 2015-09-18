@@ -36,6 +36,9 @@ Plugin 'SirVer/ultisnips'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'jpalardy/vim-slime'
 Plugin 'honza/vim-snippets'
+Plugin 'gcmt/taboo.vim'
+Plugin 'elzr/vim-json'
+Plugin 'Valloric/YouCompleteMe'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -51,28 +54,28 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""				General config								 "
+""General config "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set t_Co=256	    " Ponemos que el modo de color sea 256
-set number	    " Show line numbers
-set linebreak	    " Break lines at word (requires Wrap lines)
+set t_Co=256    " Ponemos que el modo de color sea 256
+set number    " Show line numbers
+set linebreak    " Break lines at word (requires Wrap lines)
 set showbreak=+++   " Wrap-broken line prefix
 set textwidth=100   " Line wrap (number of cols)
-set showmatch	    " Highlight matching brace
-set visualbell	    " Use visual bell (no beeping)
+set showmatch    " Highlight matching brace
+set visualbell    " Use visual bell (no beeping)
  
-set hlsearch	    " Highlight all search results
-set smartcase	    " Enable smart-case search
-set ignorecase	    " Always case-insensitive
-set incsearch	    " Searches for strings incrementally
-set autoindent	    " Auto-indent new lines
+set hlsearch    " Highlight all search results
+set smartcase    " Enable smart-case search
+set ignorecase    " Always case-insensitive
+set incsearch    " Searches for strings incrementally
+set autoindent    " Auto-indent new lines
 set shiftwidth=4    " Number of auto-indent spaces
-set smartindent	    " Enable smart-indent
-set smarttab	    " Enable smart-tabs
+set smartindent    " Enable smart-indent
+set smarttab    " Enable smart-tabs
 set softtabstop=4   " Number of spaces per Tab
 set fileformats=unix,dos,mac
-"set list
+set list
 set listchars=trail:.,extends:#,eol:¬
 "" Charset options: always force to UTF-8 {{{
 set fileencoding=utf-8
@@ -81,8 +84,7 @@ set encoding=utf-8
 set nocp incsearch "incremental search show pattern match as you type
 set hlsearch " highlight search results
 
-set timeoutlen=210
-set autoindent
+set timeoutlen=100
 
 " Tabs
 set smarttab
@@ -103,7 +105,7 @@ set noerrorbells  " No noise.
 set laststatus=2  " Always show status line.
 
 syntax  enable
-set background=dark
+set background=light
 colorscheme solarized
 if has("multi_byte")
     if &termencoding == ""
@@ -116,15 +118,15 @@ if has("multi_byte")
 endif
  
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""				Advanced config								 "
+""Advanced config"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set ruler	" Show row and column ruler information
- 
-set undolevels=1000	" Number of undo levels
-set backspace=indent,eol,start	" Backspace behaviour
+set ruler" Show row and column ruler information
+
+set undolevels=1000" Number of undo levels
+set backspace=indent,eol,start" Backspace behaviour
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-""				Mapping de teclas							 "
+""Mapping de teclas "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 imap kj <Esc>
 " Smart way to move between windows
@@ -132,3 +134,16 @@ imap kj <Esc>
  map <C-k> <C-W>k
  map <C-h> <C-W>h
  map <C-l> <C-W>l
+
+" Smart way to toggle paste mode
+map <F8> :set paste<CR>
+map <F9> :set nopaste<CR>
+imap <F8> <C-O>:set paste<CR>
+imap <F9> <nop>
+set pastetoggle=<F9>
+
+"No usar nerdtree
+let mapleader=" "
+map <leader>k :NERDTree<cr> 
+let g:netrw_liststyle=3
+
