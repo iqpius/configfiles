@@ -1,7 +1,0 @@
-autocmd LocationChange .* js modes.passAllKeys = false
-autocmd LocationChange mail\\.google\\.com js modes.passAllKeys = true 
-autocmd LocationChange web\\.telegram\\.org js modes.passAllKeys = true 
-autocmd LocationChange typingweb\\.com js modes.passAllKeys = true 
-set hintchars=hjklasdfgyuiopqwertnmzxcvb
-highlight Hint font-family: pango:Source Code Pro Medium; font-size: 12px; font-weight: bold; text-transform: uppercase; color: white; background-color: blue; border-color: ButtonShadow;border-width: 0px; border-style: solid; padding: 0px 1px 0px 1px; 
-
