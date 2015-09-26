@@ -148,3 +148,7 @@ let mapleader=" "
 map <leader>k :NERDTree<cr> 
 let g:netrw_liststyle=3
 
+vmap <C-c> :w! ~/.sharedvim/.vimbuffer<CR>
+nmap <C-c> :.w! ~/.sharedvim/.vimbuffer<CR>
+" paste from buffer
+map <C-y> :r ~/.sharedvim/.vimbuffer<CR>
