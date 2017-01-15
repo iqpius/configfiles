@@ -1,18 +1,15 @@
 #!/bin/bash
-
 # Configuracion de git
 
-git config --global core.editor "vim"
+git config --global core.editor "vis"
 git config --global user.name "Jose GL" 
-git config --global user.email jose@josegl.com
+git config --global user.email jgarloz18@gmail.com
 
-git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-git clone https://github.com/altercation/vim-colors-solarized.git
-cp -r vim-colors-solarized/colors ~/.vim/
+if [ -d ~/.config ]; then;
+  ln -s vis ~/.config/
+else
+  mkdir ~/.config
+  ln -s vis ~/.config/
+fi
 
-# Restauracion de las configs
-cp  .zshrc ~/
-cp .vimrc ~/.vimrc 
-cp .tmux.conf ~/
-cp -r .fonts ~/
-
+ln -s .tmux.conf ~/.tmux.conf
