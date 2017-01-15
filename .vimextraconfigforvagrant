@@ -1,4 +1,0 @@
-vmap <C-c> :w! ~/.vimbuffer<CR>
-nmap <C-c> :.w! ~/.vimbuffer<CR>
-" paste from buffer
-map <C-y> :r ~/.vimbuffer<CR>
